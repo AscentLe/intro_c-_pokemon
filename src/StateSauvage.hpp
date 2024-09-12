@@ -1,8 +1,7 @@
-#ifndef STATECOMBAT_HPP  
-#define STATECOMBAT_HPP
+#ifndef STATESAUVAGE_HPP  
+#define STATESAUVAGE_HPP
 #include "State.hpp"
-
-class StateCombat : public State {
+class StateSauvage : public State {
 public:
     void handle() override; 
     std::string getName() const override;

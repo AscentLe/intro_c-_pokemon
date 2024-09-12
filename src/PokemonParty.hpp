@@ -1,3 +1,5 @@
+#ifndef POKEMONPARTY_HPP  
+#define POKEMONPARTY_HPP
 #include "SetOfPokemon.hpp"
 #include "Pokeball.hpp"
 #include <iostream>
@@ -22,5 +24,5 @@ public:
 
     void disband();
 };
-
+#endif
 

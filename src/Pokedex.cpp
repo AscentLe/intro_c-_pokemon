@@ -19,10 +19,12 @@ Pokedex::Pokedex(const std::string &filename){
     std::string name = donneesLigne[1];            
     double hp = std::stod(donneesLigne[5]);         
     double attack = std::stod(donneesLigne[6]);        
-    double defense = std::stod(donneesLigne[7]);        
-    int generation = std::stoi(donneesLigne[11]);      
+    double defense = std::stod(donneesLigne[7]);   
+    double speed = std::stod(donneesLigne[10]);     
+    int generation = std::stoi(donneesLigne[11]);
+    bool legendary = (donneesLigne[12] == "True");
 
-    Pokemon* pokemonPtr = new Pokemon(id, name, hp, attack, defense, generation);
+    Pokemon* pokemonPtr = new Pokemon(id, name, hp, attack, defense, speed, generation, legendary);
     arrayofPokemon.push_back(pokemonPtr);
     }
     file.close();

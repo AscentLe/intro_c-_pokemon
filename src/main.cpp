@@ -9,13 +9,13 @@
 void ClientCode(){
     Context *context = new Context(new WaitingState);
     context->Request();
-    context->Request();
+    //gocontext->Request();
     delete context;
 }
 
 int main(){
-    /*Pokeball pokeball;
-    std::cout << "Nb of Pokemon : " << Pokemon::getNb()  << std::endl;
+    //Pokeball pokeball;
+    /*std::cout << "Nb of Pokemon : " << Pokemon::getNb()  << std::endl;
     Pokemon salameche(4,"salameche", 100, 50, 25, 1);
     std::cout << "Nb of Pokemon : " << Pokemon::getNb()  << std::endl;
     Pokemon bulbizarre(1, "bulbizarre", 100, 25, 10, 1);
@@ -55,7 +55,7 @@ int main(){
     std::vector<int> ids = {1,10,100,200,300,400,500};
     PokemonParty myParty(ids, &pokeball);
 
-    /*myParty.displayParty();
+    myParty.displayParty();
     myParty.displayList();
     pokeball.displayList();
     myParty.disband();

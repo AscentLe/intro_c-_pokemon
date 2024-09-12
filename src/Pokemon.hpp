@@ -9,10 +9,12 @@ private:
     double hitPoint;
     double attack;
     double defense;
+    double speed;
     int generation;
+    bool legendary;
     static int NbPokemon;
 public:
-    Pokemon(int id, const string &name, double hitPoint, double attack, double defense, int generation);
+    Pokemon(int id, const string &name, double hitPoint, double attack, double defense, double speed, int generation, bool legendary);
     Pokemon(const Pokemon &anotherPokemon); 
 
     ~Pokemon();
@@ -22,7 +24,9 @@ public:
     double getHitPoint() const;
     double getAttack() const;
     double getDefense() const;
+    double getSpeed() const; 
     int getGeneration() const;
+    bool getLegendary() const;
     static int getNb();
 
     void setHP(double hp);

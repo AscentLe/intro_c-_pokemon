@@ -66,7 +66,7 @@ bool Pokeball::removePokemonById(int id) {
 
 void Pokeball::addPokemonback(Pokemon* pokemon) {
     arrayofPokemon.push_back(pokemon);
-    std::cout << "Pokemon added back to Pokeball." << std::endl;
+    std::cout << "Pokemon added to Pokeball." << std::endl;
 }
 
 Pokeball::~Pokeball(){

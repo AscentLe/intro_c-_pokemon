@@ -11,5 +11,6 @@ public:
     
     void set_context(Context *context);
     virtual void handle()=0;
+    virtual std::string getName() const = 0;
 };
 #endif

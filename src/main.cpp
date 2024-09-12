@@ -4,7 +4,7 @@
 #include "Pokeball.hpp"
 #include "PokemonParty.hpp"
 #include "Context.hpp"
-#include "StateAttente.hpp"
+#include "WaitingState.hpp"
 
 void ClientCode(){
     Context *context = new Context(new WaitingState);
@@ -14,7 +14,7 @@ void ClientCode(){
 }
 
 int main(){
-    Pokeball pokeball;
+    /*Pokeball pokeball;
     std::cout << "Nb of Pokemon : " << Pokemon::getNb()  << std::endl;
     Pokemon salameche(4,"salameche", 100, 50, 25, 1);
     std::cout << "Nb of Pokemon : " << Pokemon::getNb()  << std::endl;
@@ -57,9 +57,10 @@ int main(){
 
     /*myParty.displayParty();
     myParty.displayList();
-    pokeball.displayList();*/
+    pokeball.displayList();
     myParty.disband();
 
-    string test;
+    string test;*/
+    ClientCode();
     return 0;
 }

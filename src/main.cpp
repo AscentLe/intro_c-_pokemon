@@ -60,6 +60,6 @@ int main(){
     pokeball.displayList();*/
     myParty.disband();
 
-
+    string test;
     return 0;
 }

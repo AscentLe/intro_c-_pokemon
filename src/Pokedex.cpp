@@ -39,7 +39,7 @@ Pokedex* Pokedex::getInstance(const std::string& filename){
 
 Pokemon* Pokedex::getOnePokebyName(std::string name) {
     int indexInList=this->findPokebyName(name);
-    if (indexInList!=1){
+    if (indexInList!=1 && indexInList < arrayofPokemon.size()){
         return new Pokemon(*(this->arrayofPokemon.at(indexInList)));
     }
     return nullptr;
@@ -47,10 +47,14 @@ Pokemon* Pokedex::getOnePokebyName(std::string name) {
 
 Pokemon* Pokedex::getOnePokebyId(int id) {
     int indexInList=this->findPokebyId(id);
-    if (indexInList!=1){
+    if (indexInList!=1 && indexInList < arrayofPokemon.size()){
         return new Pokemon(*(this->arrayofPokemon.at(indexInList)));
     }
     return nullptr;
+}
+
+int Pokedex::getPokemonCount() const {
+    return arrayofPokemon.size();
 }
 
 Pokedex::~Pokedex() {

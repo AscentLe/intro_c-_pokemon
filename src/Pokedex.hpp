@@ -13,6 +13,7 @@ public:
     static Pokedex* getInstance(const std::string& filename);
     Pokemon* getOnePokebyName(string name) override;
     Pokemon* getOnePokebyId(int id) override;
+    int getPokemonCount() const;
     ~Pokedex();
 };
 #endif

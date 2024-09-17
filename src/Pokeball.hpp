@@ -14,6 +14,7 @@ public:
     bool removePokemonByName(const std::string& name);
     bool removePokemonById(int id);
     void addPokemonback(Pokemon* pokemon); //method to add back from pokemonparty
+    int getPokemonCount() const;
     ~Pokeball();
 };
 #endif

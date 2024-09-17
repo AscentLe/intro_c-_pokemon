@@ -1,6 +1,6 @@
 #include "Context.hpp"
 
-Context::Context(State *state) : state_(nullptr){
+Context::Context(State *state, Player *player) : state_(nullptr), player_(player){
     this->TransitionTo(state);
 }
 
@@ -9,7 +9,7 @@ Context::~Context(){
 }
 
 void Context::TransitionTo(State *state){
-    std::cout << "Context: Transition to " << state->getName() << "\n";
+    //std::cout << "Context: Transition to " << state->getName() << "\n";
     if (this->state_ != nullptr){
         delete this->state_;
     }
@@ -19,4 +19,8 @@ void Context::TransitionTo(State *state){
 
 void Context::Request(){
     this->state_->handle();
+}
+
+Player* Context::getPlayer() const {
+    return player_;
 }

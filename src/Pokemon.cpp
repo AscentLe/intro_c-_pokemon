@@ -4,17 +4,17 @@
 int Pokemon::NbPokemon = 0;
 
 Pokemon::Pokemon(int id, const string &name, double hitPoint, double attack, double defense, double speed, int generation, bool legendary) : id(id), name(name), hitPoint(hitPoint), attack(attack), defense(defense), speed(speed), generation(generation), legendary(legendary){
-    std::cout << "Constructeur" << std::endl;
-    std::cout << "Nom : " << name << std::endl;
+    //std::cout << "Constructeur" << std::endl;
+    //std::cout << "Nom : " << name << std::endl;
     NbPokemon+=1;
 } 
 Pokemon:: Pokemon(const Pokemon &anotherPokemon):id(anotherPokemon.id), name(anotherPokemon.name), hitPoint(anotherPokemon.hitPoint), attack(anotherPokemon.attack), defense(anotherPokemon.defense), speed(anotherPokemon.speed), generation(anotherPokemon.generation), legendary(anotherPokemon.legendary){
-    std::cout << "Copie : " << std::endl;
+    //std::cout << "Copie : " << std::endl;
     NbPokemon+=1;
 }
 
 Pokemon::~Pokemon(){
-    std::cout << "Ici le destructeur" << std::endl;
+    //std::cout << "Ici le destructeur" << std::endl;
     NbPokemon-=1;
 }
 

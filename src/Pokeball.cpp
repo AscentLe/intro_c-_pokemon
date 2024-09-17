@@ -69,5 +69,9 @@ void Pokeball::addPokemonback(Pokemon* pokemon) {
     std::cout << "Pokemon added to Pokeball." << std::endl;
 }
 
+int Pokeball::getPokemonCount() const {
+    return arrayofPokemon.size();
+}
+
 Pokeball::~Pokeball(){
 }

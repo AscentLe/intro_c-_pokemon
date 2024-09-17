@@ -7,8 +7,11 @@
 #include "WaitingState.hpp"
 
 void ClientCode(){
-    Context *context = new Context(new WaitingState);
+    Player player;
+    Context *context = new Context(new WaitingState, &player);
+    while(true){
     context->Request();
+    }
     //gocontext->Request();
     delete context;
 }

@@ -2,7 +2,7 @@
 #include "cstdlib"
 #include "ctime"
 #include "Pokedex.hpp"
-Player::Player() : pokeball(new Pokeball()), party(new PokemonParty({}, pokeball)) {}
+Player::Player() : pokeball(new Pokeball()), party(new PokemonParty(std::vector<std::string>{}, pokeball)) {}
 
 Player::~Player() {
     delete pokeball;
@@ -48,6 +48,17 @@ void Player::addPokemonToParty(const std::string& name) {
     } else {
         std::cout << "Pokemon " << name << " not found in Pokeball." << std::endl;
     }
+}
+
+bool Player::removePokemonFromParty(const std::string& name) {
+    bool removed = party->removePokemonByName(name);
+    if (removed) {
+        Pokemon* pokemon = Pokedex::getInstance("../resources/pokedex.csv")->getOnePokebyName(name);
+        if (pokemon) {
+            pokeball->addPokemonback(pokemon);
+        }
+    }
+    return removed;
 }
 
 Pokeball* Player::getPokeball() {

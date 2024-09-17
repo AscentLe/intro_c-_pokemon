@@ -22,6 +22,14 @@ public:
     
     Pokemon* getOnePokebyId(int id) override;
 
+    bool hasAtLeastOnePokemon() const; 
+
+    int getPokemonCount() const;
+
+    void addPokemonback(Pokemon* pokemon);
+
+    bool removePokemonByName(const std::string& name);
+
     void disband();
 };
 #endif

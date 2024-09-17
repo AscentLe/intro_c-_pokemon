@@ -29,7 +29,7 @@ void StateSauvage::handle(){
             break;
     } else if (choice == "f" || choice == "F") {
         std::cout << "You chose to fight the wild " << wildPokemon->getName() << "!\n";
-        this->context_->TransitionTo(new StatePartySetup(player->getPokeball));
+        this->context_->TransitionTo(new StatePartySetup());
         break;
     } 
     }

@@ -13,6 +13,7 @@ public:
     void captureStarterPokemon(Pokemon * pokemon);
     int getCapturedPokemonCount() const;
     void addPokemonToParty(const std::string& name);
+    bool removePokemonFromParty(const std::string& name);
     Pokeball* getPokeball();
     PokemonParty* getParty() const;
 };

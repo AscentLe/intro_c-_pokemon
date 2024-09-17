@@ -31,6 +31,10 @@ PokemonParty::PokemonParty(const std::vector<int>& ids, Pokeball* pokeball) : li
     }
 }
 
+bool PokemonParty::hasAtLeastOnePokemon() const {
+    return party.size() > 0;
+}
+
 void PokemonParty::disband() {
     std::cout << "Disbanding the Pokemon Party..." << std::endl;
     for (Pokemon* p : party) {
@@ -48,6 +52,32 @@ void PokemonParty::displayParty() const {
     for (const Pokemon* p : party) {
         p->displayInfo();
     }
+}
+
+int PokemonParty::getPokemonCount() const {
+    return arrayofPokemon.size();
+}
+
+void PokemonParty::addPokemonback(Pokemon *pokemon){
+    arrayofPokemon.push_back(pokemon);
+    std::cout << "Pokemon added to Pokeball." << std::endl;
+}
+
+bool PokemonParty::removePokemonByName(const std::string& name) {
+    if (!hasAtLeastOnePokemon()) {
+        std::cout << "Cannot remove Pokémon. Your party must have at least one Pokémon." << std::endl;
+        return false;
+    }
+    for (auto it = party.begin(); it != party.end(); ++it) {
+        if ((*it)->getName() == name) {
+            linkedPokeball->addPokemonback(*it);
+            party.erase(it); 
+            std::cout << "Removed " << name << " from your party and added it back to your Pokéball." << std::endl;
+            return true;
+        }
+    }
+    std::cout << "Pokémon with name " << name << " not found in your party." << std::endl;
+    return false;
 }
 
 Pokemon *PokemonParty::getOnePokebyName(string name)
